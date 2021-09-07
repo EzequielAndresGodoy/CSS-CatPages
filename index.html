@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cats - Responsive web landing pages</title>
+        <link rel="stylesheet" type="text/css" href="Style.css">
+        <link rel="shortcut icon" href="https://image.flaticon.com/icons/png/512/57/57104.png">
+        <link rel="stylesheet" type="text/css" href="normalize.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    </head>
+        
+    <body>
+        <section class="div-bg">
+            <header>
+                <a href="#Inicio" class="header__logo push">Cats</a>
+                <div class="desplegable"></div>
+                    <ul class="header__nav">
+                        <li><a href="#" class="active">Inicio</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="#">Noticias</a></li>
+                        <li><a href="#">Contacto</a></li>
+                      </ul>
+            </header>
+            <div class="text-conteiner">
+                <div class="text-box">
+                    <h2>Suaves, lindos y esponjosos</h2>
+                    <p> El gato doméstico, llamado popularmente gato, y de forma coloquial minino, michino,​ michi, micho,​ mizo,​ miz,​ morroño​ o morrongo, entre otros nombres, es un mamífero carnívoro de la familia Felidae. Es una subespecie domesticada por la convivencia con el ser humano.</p>
+                    <a href="https://es.wikipedia.org/wiki/Felis_silvestris_catus" target="_blank">Leer mas</a>
+                </div>
+                <div class="img-box">
+                    <img src="Img/Siames.png" class="gatos">
+                </div>
+            </div>
+                <ul class="selection">
+                    <li data-text="Siames" 
+                        class="active" 
+                        onclick="mod('Img/Siames.png','linear-gradient(-45deg, rgba(255,199,182,1) 0%, rgba(119,89,78,1) 50%, rgba(44,46,58,1) 100%)',0)">
+                        <img src="Img/Siames.png">
+                    </li>
+                    <li data-text="Calvo" 
+                        onclick="mod('Img/Calvo.png','linear-gradient(-45deg, rgba(67,48,39,1) 0%, rgba(132,113,109,1) 50%, rgba(215,177,174,1) 100%)',1)">
+                        <img src="Img/Calvo.png">
+                    </li>
+                    <li data-text="Gordito" 
+                        onclick="mod('Img/Gordito.png','linear-gradient(-45deg, rgba(218,200,188,1) 0%, rgba(208,160,121,1) 50%, rgba(138,85,54,1) 100%)',2)">
+                        <img src="Img/Gordito.png">
+                    </li>
+                    <li data-text="Gardfield" 
+                        onclick="mod('Img/Naranja.png','linear-gradient(-45deg, rgba(194,197,213,1) 0%, rgba(191,128,72,1) 50%, rgba(127,69,19,1) 100%)',3)">
+                        <img src="Img/Naranja.png">
+                    </li>
+                    <li data-text="Tigre" 
+                        onclick="mod('Img/Tigre.png','linear-gradient(-45deg, rgba(216,198,98,1) 0%, rgba(131,97,59,1) 50%, rgba(53,47,39,1) 100%)',4)">
+                        <img src="Img/Tigre.png">
+                    </li>
+                </ul>
+            <ul class="redes">
+                <li><a href="https://www.facebook.com/" target="_blank"><img src="Img/facebook.png"></a></li>
+                <li><a href="https://twitter.com/?lang=es" target="_blank"><img src="Img/twitter.png"></a></li>
+                <li><a href="https://www.instagram.com/?hl=es" target="_blank"><img src="Img/instagram.png"></a></li>
+            </ul>
+        </section>
+        
+        <script>
+            
+            let Menudesplegable = document.querySelector(".desplegable");
+            let header__nav = document.querySelector(".header__nav");
+            Menudesplegable.onclick = function(){
+                Menudesplegable.classList.toggle("active");
+                header__nav.classList.toggle("active");
+            }
+
+
+
+            // Cambia la imagen haciendo click
+            function ImgTransi(src){
+                document.querySelector(".gatos").src = src;
+            }
+
+            // Cambia el color de fondo
+            
+            function changecolor(color){
+                const bg = document.querySelector('.div-bg');
+                bg.style.background = color;
+                bg.style.backgroundSize = '400% 400%';
+            }
+
+            // Agrega una clase a la seleccion (barra inferior)
+            let el = document.querySelectorAll('.selection li');
+            function mod(src, color, index){
+                ImgTransi(src);
+                changecolor(color);
+                var c = 0
+                while (c < el.length) {
+                    el[c++].className = "check"
+                }
+                el[index].className = "check active"
+            }
+            
+        </script>
+
+    </body>
+</html>

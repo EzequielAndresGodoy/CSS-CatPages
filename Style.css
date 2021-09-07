@@ -1,0 +1,314 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.div-bg {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    background: linear-gradient(90deg, #ffc7b6 0%, #77594e 50%, #2c2e3a 100%);
+    background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 50% 100%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.div-bg::before {
+    background: rgba(0, 0, 0, 0.08);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 80%;
+}
+
+header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    padding: 20px 80px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+header .header__logo {
+    position: relative;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    font-size: 42px;
+}
+
+header .header__nav {
+    position: relative;
+    display: flex;
+}
+
+header .header__logo {
+    text-shadow: 2px 2px 3px black;
+}
+
+header .header__nav li{
+    list-style: none;
+}
+
+header .header__nav li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 8px 10px;
+    margin-left: 10px;
+    border-radius: 40px;
+}
+
+header .header__nav li a.active,
+header .header__nav li a:hover {
+    background: #fff;
+    color: #333;
+}
+
+.text-conteiner{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-conteiner .text-box {
+    position: relative;
+    max-width: 600px;
+}
+
+.text-conteiner .text-box h2 {
+    color: #fff;
+    font-size: 64px;
+    text-shadow: 1px 1px 2px black;
+    line-height: 100px;
+    font-weight: 700;
+}
+
+.text-conteiner .text-box p {
+    color: #fff;
+    margin-top: 20px;  
+}
+
+.text-conteiner .text-box a {
+    display: inline-block;
+    margin-top: 20px;  
+    padding: 8px 20px;
+    background: #fff;
+    color: #333;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.text-conteiner .img-box {
+    position: relative;
+    z-index: 1;
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.text-conteiner .img-box img {
+    max-width: 400px;
+}
+
+.selection {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+
+}
+
+.selection li {
+    list-style: none;
+    display: flex;
+    margin: 0px 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.25);
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.selection li:nth-child(2) img{
+    object-position: -10px 0px;
+}
+
+.selection li:nth-child(4) img{
+    object-position: 6px 0px;
+}
+
+.selection li.active{
+    border: 2px solid rgba(255, 255, 255, 1);
+}
+
+.selection li::before{
+    position: absolute;
+    top: -200px;
+    left: 200px;
+    content: attr(data-text);
+    white-space: nowrap;
+    font-size: 8em;
+    color: rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    font-weight: 700;
+    pointer-events: none;
+    
+}
+
+.selection li.active::before {
+    opacity: 1;
+}
+
+.selection li img {
+    object-fit:cover;
+    
+}
+
+.redes {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.redes li {
+    list-style: none;
+}
+
+.redes li a {
+    display: inline-block;
+    margin: 5px 0;
+    transform: scale(0.6);
+    filter: invert()
+}
+
+@media (max-width: 991px) {
+    
+    .div-bg::before {
+        display: none;
+    }
+    
+    header {
+        padding: 20px;
+        justify-content: flex-end;
+    }
+    header .push {
+        margin-right: auto;
+    }
+    header .header__nav li a {
+        font-size: 18px;
+        margin: 6px 0;
+        padding: 10px 20px;
+    }
+    .div-bg {
+        padding: 20px;
+        padding-bottom: 120px;
+    }
+    .text-conteiner {
+        margin-top: 70px;
+        flex-direction: column;
+        width: 100%;
+    }
+    .text-conteiner .text-box {
+        max-width: 100%;
+    }
+    .text-conteiner .text-box h2{
+        font-size: 40px;
+        line-height: 60px;
+        margin-bottom: 15px;
+    }
+    .text-conteiner .img-box {
+        max-width: 100%;
+        justify-content: center;
+    }
+    .text-conteiner .img-box img{
+        max-height: 300px;
+        max-width: 100%;
+    }
+    .selection li{
+        margin: 0 3px;
+        height: 55px;
+        width: 55px;
+    }
+    .selection li::before {
+        position: absolute;
+        top: -150px;
+        left: 0px;
+        font-size: 6em;
+    }
+    .redes {
+        background: rgba(0, 0, 0, 0.1);
+        right: 0;
+        width: 50px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    header .header__nav {
+        display: none;
+    }
+    header .header__nav.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: grey;
+        z-index: 100;
+        flex-direction: column;
+    }
+    .desplegable {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background: url(Img/menu.png);
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 10000;
+    }
+
+    .desplegable.active {
+        position: fixed;
+        background: url(Img/close.png);
+        background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
